@@ -11,6 +11,7 @@ import UserProfile from './components/UserProfile';
 import Update from './components/Update';
 import Admin from './components/Admin';
 import AdminContent from './components/AdminContent';
+import Compiler from './components/Compiler';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/quiz" element={<Competition/>}></Route>
             <Route path="/profile" element={<UserProfile/>}></Route>
             <Route path="/updateprofile/:email" element={<Update />} />
+            <Route path="/compiler" element={<Compiler />} />
           </Routes>
         </BrowserRouter>
     </>
