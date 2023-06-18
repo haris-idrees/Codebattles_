@@ -12,6 +12,11 @@ import Update from './components/Update';
 import Admin from './components/Admin';
 import AdminContent from './components/AdminContent';
 import Compiler from './components/Compiler';
+import CurrentCompetition from './components/CompetitionContent';
+import Test from './components/Test';
+import CreateCompetiton from './components/CreateCompetiton';
+import CreatePost from './components/createpost';
+import CreateProblem from './components/CreateProblem';
 
 function App() {
   return (
@@ -30,6 +35,10 @@ function App() {
             <Route path="/profile" element={<UserProfile/>}></Route>
             <Route path="/updateprofile/:email" element={<Update />} />
             <Route path="/compiler" element={<Compiler />} />
+            <Route path="/competition/:competionId" element={<CurrentCompetition />} />
+            <Route path="/test/:testID" element={<Test />} />
+            <Route path="/createcomp" element={<CreateCompetiton />} />
+            <Route path="/createprob" element={<CreateProblem />} />
           </Routes>
         </BrowserRouter>
     </>

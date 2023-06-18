@@ -283,18 +283,7 @@ export default function ProfileContent() {
                                             </div>
 
                                             <div className="reference">
-                                                {/* <img className="reference-thumb"  /> */}
                                                 <AdvancedImage cldImg={new CloudinaryImage(post.post_image, {cloudName: 'drvo4uxiv'})} className="reference-thumb"/>
-                                                {/* <div className="reference-content">
-                                                    <div className="reference-title">
-                                                        A quick and simple image placeholder service. | PLACEHOLDER.it
-                                                    </div>
-                                                    <div className="reference-subtitle">
-                                                        How does it work? Just put your image size after our URL and
-                                                        you'll get a placeholder.
-                                                    </div>
-                                                    <div className="reference-font">placeholder.it</div>
-                                                </div> */}
                                             </div>
                                             <div className="social">
                                                 <div className="social-content"></div>

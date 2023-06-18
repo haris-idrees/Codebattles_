@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <div className='navbar-container'>
+        <div className='navbar-container nav-fixed'>
           <Link to="/" className='navbar-logo' onClick={closeMobileMenu} style={{ textDecoration: 'none', color: 'white' }}>
             Code <span>Battles </span>
             <GiBiceps /></Link>
@@ -62,27 +62,20 @@ const Navbar = () => {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-             <Link to='/home' className='nav-links'>
+              <Link to='/home' className='nav-links'>
                 Home
-             </Link>
-            </li>
-            <li className='nav-item'>
-            <Link to='/home'className='nav-links'>
-                About
-             </Link>
-            </li>
-            <li className='nav-item'>
-                <Link to='/home'className='nav-links'>
-                    Contact Us
-                </Link>
+              </Link>
             </li>
             {name && (
               <>
                 <li className='nav-item'>
-                  <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>{name}</Link>
+                  <Link to="/quiz" className='nav-links'>Competitions</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to="/timeline" className='nav-links'>Timeline</Link>
+                  <Link to="/timeline" className='nav-links'>Feed</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>{name}</Link>
                 </li>
                 <li className='nav-item'>
                   <div className='navbar-buttons'>
@@ -107,7 +100,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-      
+
       </nav>
     </>
   );

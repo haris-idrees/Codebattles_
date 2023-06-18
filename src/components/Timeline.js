@@ -26,15 +26,8 @@ function Timeline() {
   return (
     <div>
       <Navbar></Navbar>
+      <CreatePost></CreatePost>
       <div className="post_css">
-        <center>
-          <div >
-            <CreatePost />
-          </div>
-        </center>
-        {/* <ProfilePost /><br />
-          <ProfilePost /><br />
-          <ProfilePost /><br /> */}
         {posts.map(post => (
 
           <div className="f-card" key={post.id}>
@@ -42,7 +35,7 @@ function Timeline() {
               <div className="options">
                 <i className="fa fa-chevron-down"></i>
               </div>
-              <AdvancedImage cldImg={post.user_img} class="co-logo"/>
+              <AdvancedImage cldImg={new CloudinaryImage(post.user_img, {cloudName: 'drvo4uxiv'})} class="co-logo"/>
               <div className="co-name">
                 <a href="#">{post.user_name}</a>
               </div>

@@ -1,0 +1,39 @@
+.competition_hero{
+    height: auto;
+    width: 100%;
+}
+
+.competition_body{
+    height: auto;
+    width: 100%;
+}
+
+.competiton_post_css{
+    display: none;
+    height: auto;
+    width: 100%;
+  } 
+  
+  @media (min-width:1056px)
+  {
+    .competiton_post_css{
+      display: block;
+      margin-left: -10px;
+    }
+  }
+  
+  @media (min-width:800px) and (max-width:1056px)
+  {
+    .competiton_post_css{
+      display: block;
+      margin-left: -50px;
+    }
+  }
+  
+  @media (min-width:0px) and (max-width:800px)
+  {
+    .competiton_post_css{
+      display: block;
+      margin-left: 90px;
+    }
+  }

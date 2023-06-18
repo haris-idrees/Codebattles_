@@ -1,53 +1,54 @@
-.CreatePost {
-    margin: 20px;
-    padding: 10px;
-    width: 400px;
-    
-    
-  }
-  
-  .CreatePost textarea {
-    width: 400px;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background-color: rgb(36, 36, 36,0.5);
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    resize: none;
-  }
-  
-  .CreatePost input[type='file'] {
-    margin-bottom: 10px;
-  }
-  
+.post-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
 
-  .CreatePost button[type='submit'] {
-    font-size: 14px;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 2px solid #f31515;
-    border-radius: 10px;
-    width: 400px;
-    background-color: #f31515;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  
-  .CreatePost button:hover[type='submit'] {
-    background-color: #1a1a1a;
-    color:  #fcfcfc;
-    border: 2px solid #8a0101;
-    transform: scale(1.01);
-    
-  }
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  .Preview {
-    margin-top: 10px;
-  }
-  
-  .Preview img {
-    max-width: 100%;
-  }
+.input-container input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 500px;
+}
+
+.input-container label {
+  cursor: pointer;
+  color: #ea1538;
+}
+
+.input-container label:hover {
+  text-decoration: underline;
+}
+
+.input-container input[type="file"] {
+  display: none; 
+}
+
+.post-component button {
+  padding: 7px 17px;
+  border: none;
+  border-radius: 3px;
+  background-color:#ea1538;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.post-component button:hover {
+  background-color: black;
+}

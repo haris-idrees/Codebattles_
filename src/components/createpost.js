@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import './createpost.css';
 import APIServices from '../APIServices';
 import { useNavigate } from 'react-router-dom';
 
-const CreatePost = () => {
+
+export default function CreatePost() {
+
+  const [text, setText] = useState('');
+  const [file, setFile] = useState(null);
   const [post_text, setPostText] = useState('');
   const [user_id, setUserId] = useState();
   const [num_of_likes, setNumLikes] = useState(0);
@@ -29,27 +34,27 @@ const CreatePost = () => {
       method: 'post',
       body: data
     })
-    .then((res) => res.json())
-    .then((response_data) => {
-      console.log(response_data['public_id']);
-      alert('Post Picture Added!');
-      setResponseData(response_data);
-      setPostImage(response_data['public_id']);
-      APIServices.insertPost(user_id, post_text, num_of_likes, num_of_dislikes, response_data['public_id'],
-      user_img,user_name)
-        .then((resp) => {
-          console.log(resp);
-          navigate('/timeline');
-        })
-        .catch((error) => {
-          console.error('Error creating post:', error);
-        });
-    })
-    .catch((error) => {
-      console.error('Error uploading image:', error);
-    });
+      .then((res) => res.json())
+      .then((response_data) => {
+        console.log(response_data['public_id']);
+        alert('Post Picture Added!');
+        setResponseData(response_data);
+        setPostImage(response_data['public_id']);
+        APIServices.insertPost(user_id, post_text, num_of_likes, num_of_dislikes, response_data['public_id'],
+          user_img, user_name)
+          .then((resp) => {
+            console.log(resp);
+            navigate('/timeline');
+          })
+          .catch((error) => {
+            console.error('Error creating post:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error uploading image:', error);
+      });
   }
-  
+
   const createPost = (event) => {
     event.preventDefault();
     // Call the insertPost function from APIServices and pass the post data
@@ -61,7 +66,7 @@ const CreatePost = () => {
       post_image,
       user_name,
       user_img
-      
+
     })
       .then((resp) => {
         console.log(resp);
@@ -73,35 +78,23 @@ const CreatePost = () => {
   };
 
   return (
-    <div>
-      <form>
-        <div>
+    <>
+      <div className="post-component">
+        <div className="input-container">
           <input type='text' value={user_name} readOnly hidden></input>
-          
-        </div>
-        <div>
           <input type='text' value={user_img} readOnly hidden></input>
-         
-        </div>
-        <div>
-          <input type="number" value={loggedIn_id} hidden readOnly />
+          <input type="number" value={parseInt(loggedIn_id)} hidden readOnly />
           
+          <input type="text" value={post_text} placeholder="How are you feeling today?" 
+           onChange={(e) => setPostText(e.target.value)}/>
+          <label htmlFor="file-input" required>
+            <i className="fas fa-image"></i>
+          </label>
+          <input id="file-input" type="file" onChange={(e) => submitPostImage(e)} />
         </div>
-        <div>
-          <input type="file" onChange={(e) => submitPostImage(e)} /><br /><br />
-        </div>
-        <div>
-          <input type="text" value={post_text} onChange={(e) => setPostText(e.target.value)} />
-          <label>Post Text</label>
-        </div>
-        <button type="submit" onClick={createPost}>
-          Post
-        </button>
-      </form>
-    </div>
+        <button type="submit" onClick={createPost}>Upload</button>
+      </div>
+    </>
   );
-};
 
-export default CreatePost;
-
-
+}

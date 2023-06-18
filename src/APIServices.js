@@ -28,6 +28,32 @@ export default class APIServices {
       });
   }
 
+  static getAllCompetitions() {
+    return fetch('http://127.0.0.1:8000/comps')
+      .then(response => response.json())
+      .then(data => {
+        // Process the data or return it as-is
+        return data;
+      })
+      .catch(error => {
+        console.error('Error retrieving competition:', error);
+        throw error;
+      });
+  }
+
+  static getAllProblems() {
+    return fetch('http://127.0.0.1:8000/problems')
+      .then(response => response.json())
+      .then(data => {
+        // Process the data or return it as-is
+        return data;
+      })
+      .catch(error => {
+        console.error('Error retrieving problems:', error);
+        throw error;
+      });
+  }
+
   static getUserPosts(user_id) {
     let url = 'http://127.0.0.1:8000/getpostsByUser/';
   
@@ -68,6 +94,8 @@ export default class APIServices {
       body: JSON.stringify(body)
     }).then(resp => resp.json());
   }
+
+  
   
   static LoginAdmin(body)
   {

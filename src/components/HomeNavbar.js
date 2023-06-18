@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <div className='navbar-container'>
+        <div className='navbar-container nav-fixed'>
           <Link to="/" className='navbar-logo' onClick={closeMobileMenu} style={{ textDecoration: 'none', color: 'white' }}>
             Code <span>Battles </span>
             <GiBiceps /></Link>

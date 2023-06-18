@@ -225,10 +225,10 @@ a {
   text-decoration-line:overline;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 876px) {
   .update_cover_button {
-    margin-left: 270px;
-    margin-right: auto;
+    margin-left: 380px;
+    
     display: block;
   }
 }
