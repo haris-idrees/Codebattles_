@@ -62,7 +62,7 @@ function Timeline() {
                 <div className="reference-font">placeholder.it</div>
               </div>
             </div>
-            <div className="social">
+            {/* <div className="social">
               <div className="social-content"></div>
               <div className="social-buttons">
                 <span>
@@ -72,7 +72,7 @@ function Timeline() {
                   <i className="fa fa-thumbs-down"></i>Dislike
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

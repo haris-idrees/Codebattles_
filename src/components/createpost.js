@@ -44,7 +44,7 @@ export default function CreatePost() {
           user_img, user_name)
           .then((resp) => {
             console.log(resp);
-            navigate('/timeline');
+    
           })
           .catch((error) => {
             console.error('Error creating post:', error);
@@ -70,6 +70,7 @@ export default function CreatePost() {
     })
       .then((resp) => {
         console.log(resp);
+        window.location.reload();
         navigate('/timeline');
       })
       .catch((error) => {

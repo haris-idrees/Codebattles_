@@ -17,6 +17,7 @@ import Test from './components/Test';
 import CreateCompetiton from './components/CreateCompetiton';
 import CreatePost from './components/createpost';
 import CreateProblem from './components/CreateProblem';
+import ShowResult from './components/ShowResult';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/test/:testID" element={<Test />} />
             <Route path="/createcomp" element={<CreateCompetiton />} />
             <Route path="/createprob" element={<CreateProblem />} />
+            <Route path='/result' element={<ShowResult></ShowResult>}></Route>
           </Routes>
         </BrowserRouter>
     </>

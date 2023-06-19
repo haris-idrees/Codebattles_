@@ -35,11 +35,11 @@ export default function CompetitionPost() {
                 <i className="fa fa-chevron-down"></i>
               </div>
               
-              <div className="co-name">
-                <a href="#">{post.name}</a>
+              <div >
+                <h2 style={{color:"black"}}>{post.name}</h2>
               </div>
               <div className="time">
-                <a href="#">{post.date_added}</a> · <i className="fa fa-globe"></i>
+                <p>{post.description}</p> 
               </div>
             </div>
             <div className="content">
@@ -49,8 +49,7 @@ export default function CompetitionPost() {
             </div>
 
             <div className="reference">
-            <AdvancedImage cldImg={new CloudinaryImage(post.post_image, {cloudName: 'drvo4uxiv'})} className="reference-thumb"/>
-              
+            <img src="https://res.cloudinary.com/drvo4uxiv/image/upload/10ProfilePicture_hptfyy" className="reference-thumb"/>
             </div>
             <center>
                 <button onClick={() => navigate(`/competition/${post.id}`)}>View</button>

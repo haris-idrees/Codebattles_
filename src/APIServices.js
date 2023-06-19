@@ -41,6 +41,17 @@ export default class APIServices {
       });
   }
 
+  static getCompbyID(comp_id, body) {
+    return fetch(`http://127.0.0.1:8000/comps/${comp_id}/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    }).then(resp => resp.json());
+  }
+  
+
   static getAllProblems() {
     return fetch('http://127.0.0.1:8000/problems')
       .then(response => response.json())
@@ -54,8 +65,45 @@ export default class APIServices {
       });
   }
 
+  static insertResult(competition_id, user_id, result) {
+    const body = {
+      competition_id: competition_id,
+      user_id: user_id,
+      result: result
+    };
+
+    return fetch(`http://127.0.0.1:8000/result/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    })
+      .then(resp => resp.json());
+  }
+
+
   static getUserPosts(user_id) {
     let url = 'http://127.0.0.1:8000/getpostsByUser/';
+  
+    if (user_id) {
+      url += `?user_id=${user_id}`;
+    }
+  
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Process the data or return it as-is
+        return data;
+      })
+      .catch(error => {
+        console.error('Error retrieving posts:', error);
+        throw error;
+      });
+  }
+
+  static getUserResults(user_id) {
+    let url = 'http://127.0.0.1:8000/get_result/';
   
     if (user_id) {
       url += `?user_id=${user_id}`;
